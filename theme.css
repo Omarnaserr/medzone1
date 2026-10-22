@@ -1,0 +1,52 @@
+/* ميدزون - هوية جديدة: ستيكرز ملونة + ظلال صلبة + شريط تنقل عايم */
+:root{--bg:#FFF6E9;--sf:#FFFFFF;--ink:#1B1730;--mut:#6B6485;--ln:#E6DCCB;--pri:#E8452F;--on:#fff;--mint:#D8F5E9;--mi:#0B6B4B;--hi:#6B4EFF;
+--pc:#FFE9A8;--pci:#6A4A00;--warn:#FFE9A8;--xpi:#6A4A00;--lem:#FFE9A8;--bd:#1B1730;--sh:4px 4px 0 #1B1730;--hero:#1B1730;
+--c1:#FFD3CB;--c2:#D9D2FF;--c3:#CFF3E3;--c4:#FFE9A8;--t1:#FFE9A8;--t1i:#6A4A00;--t2:#D8F5E9;--t2i:#0B6B4B;--t3:#E3DEFF;--t3i:#3B2BA8;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14112A;--sf:#201B44;--ink:#F6F1FF;--mut:#A9A1CC;--ln:#352E66;--pri:#FF6B57;--on:#1B1730;--mint:#16372F;--mi:#8BF0C4;
+--pc:#3B2F10;--pci:#FFD66B;--warn:#3B2F10;--xpi:#FFD66B;--lem:#2A2358;--bd:#4A4290;--sh:4px 4px 0 #0A0818;--hero:#2A2358;--c1:#4A2420;--c2:#2C2660;--c3:#14382E;--c4:#3B2F10;color-scheme:dark}}
+html{background:var(--bg)}
+body{background:var(--bg) radial-gradient(circle at 1px 1px,color-mix(in srgb,var(--ink) 9%,transparent) 1.2px,transparent 0) 0 0/22px 22px;font-family:"IBM Plex Sans Arabic","Readex Pro",system-ui,sans-serif}
+h1,h2,h3,.hi,.nb span,.btn,.chip{font-family:"Readex Pro","Cairo","IBM Plex Sans Arabic",sans-serif}
+h1{font-weight:800;letter-spacing:-.01em}
+.app{max-width:720px;padding-bottom:150px}
+.top{background:transparent;backdrop-filter:blur(8px)}
+.top .tl2 span b{color:var(--pri)}
+/* هيرو */
+.hero{background:var(--hero)!important;color:#fff!important;border:2px solid var(--bd);border-radius:28px;box-shadow:var(--sh);position:relative;overflow:hidden;padding:24px}
+.hero::after{content:"";position:absolute;inset-inline:0;bottom:0;height:46px;opacity:.55;pointer-events:none;
+background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='46' viewBox='0 0 240 46'%3E%3Cpath d='M0 28h60l8-14 10 30 9-26 7 10h146' fill='none' stroke='%23FF6B57' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") repeat-x 0 100%/240px 46px}
+.hero>*{position:relative;z-index:1}.hero .hi{color:#FFC53D;font-weight:700}.hero h1{color:#fff;font-size:28px}
+.cta2{display:inline-flex;margin-top:12px;background:var(--pri);color:#fff;border:2px solid #fff;border-radius:999px;padding:10px 20px;font-weight:700;text-decoration:none;box-shadow:3px 3px 0 #fff3}
+.hero .ring{color:#fff}.hero .ring small{color:#ffffffb0}
+/* بينتو */
+.bt{border:2px solid var(--bd);border-radius:20px;box-shadow:var(--sh);color:var(--ink)}
+.bento .bt:nth-child(1){background:var(--c1)}.bento .bt:nth-child(2){background:var(--c2)}.bento .bt:nth-child(3){background:var(--c3)}
+.bt span,.bt small{color:var(--ink);opacity:.75}
+/* أدوات: أول واحدة (الـAI) عريضة */
+.grid2{gap:14px}.tool{border-radius:22px;color:var(--ink)}.tool:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--bd)}
+.tool:nth-child(1){background:var(--c4)}.tool:nth-child(2){background:var(--c2);grid-column:1/-1;flex-direction:row;align-items:center;gap:14px}
+.tool:nth-child(2) b{font-size:20px}.tool:nth-child(3){background:var(--c3)}.tool:nth-child(4){background:var(--c1)}
+.tool small{color:var(--ink);opacity:.72}
+.c2,.ch{border:2px solid var(--bd);border-radius:20px;box-shadow:3px 3px 0 var(--bd)}
+.c2:hover{transform:translate(-1px,-1px)}
+details.ch[open]{background:color-mix(in srgb,var(--c2) 35%,var(--sf))}
+.grp{display:inline-block;background:var(--c3);color:var(--ink);padding:4px 14px;border-radius:999px;border:2px solid var(--bd);font-size:15px;margin:18px 0 10px}
+.chip{border:2px solid var(--bd);border-radius:999px;background:var(--sf);color:var(--ink);font-weight:600}
+.chip.on{background:var(--pri);color:#fff;box-shadow:2px 2px 0 var(--bd)}
+.btn{border:2px solid var(--bd);border-radius:999px;box-shadow:3px 3px 0 var(--bd)}.btn:active{transform:translate(2px,2px);box-shadow:none}
+.btn.ln{background:var(--sf);color:var(--ink)}
+.op{border:2px solid var(--bd);border-radius:18px}.op.ok{background:var(--c3)}.op.no{background:var(--c1)}
+.sr,textarea,select{border:2px solid var(--bd)!important;border-radius:16px;background:var(--sf);color:var(--ink)}
+.pb{background:var(--ln);border-radius:99px;overflow:hidden}.pb i{background:linear-gradient(90deg,var(--pri),var(--hi))}
+/* شريط التنقل العايم */
+.nb{inset-inline:14px;bottom:calc(12px + env(safe-area-inset-bottom,0px));max-width:560px;margin-inline:auto;border:2px solid var(--bd);border-radius:28px;box-shadow:var(--sh);padding:6px;background:var(--sf)}
+.nb a{border-radius:20px;color:var(--mut)}.nb a.on{background:var(--pri);color:#fff}
+/* بوابة الدخول */
+.gate{background:var(--hero);color:#fff}.gate-sheet{background:var(--sf);color:var(--ink);border:2px solid var(--bd);border-radius:32px 32px 0 0}
+.gate-top h1{color:#fff}.gate-top p{color:#ffffffc0}
+.splash{background:var(--bg)}
+/* زرار اللغة */
+.lg{position:fixed;z-index:60;top:calc(10px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);min-width:60px;height:34px;padding:0 14px;border:2px solid var(--bd);border-radius:999px;background:var(--c4);color:var(--ink);font:700 13px "Readex Pro",sans-serif;box-shadow:2px 2px 0 var(--bd);cursor:pointer}
+/* English = LTR */
+html[dir=ltr] body{direction:ltr;text-align:left}html[dir=ltr] .bk svg,html[dir=ltr] .c2>.mut svg,html[dir=ltr] .row>svg{transform:scaleX(-1)}
+@media(min-width:900px){.app{max-width:760px}.hero h1{font-size:34px}}
